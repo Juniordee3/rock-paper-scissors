@@ -1,5 +1,3 @@
-let playerHand;
-let cpuHand;
 let playerScore = 0;
 let cpuScore = 0;
 
@@ -21,10 +19,10 @@ function getComputerChoice(min, max) {
 }
 
 // function to play round
-function playRound(playerHand, cpuHand) {
+function playRound() {
 
     // prompt for playerHand
-    playerHand = prompt("What will you play?");
+    let playerHand = prompt("What will you play?");
     if (playerHand === null)
         playerHand = prompt("Please enter rock, paper, or scissors");
     else
@@ -71,7 +69,7 @@ function playRound(playerHand, cpuHand) {
 // game function
 function game() {
     for (let i = 0; i < 5; i++) {
-        playRound(playerHand, cpuHand)
+        playRound();
         console.log("Player: " + playerScore + "\t" + "CPU: " + cpuScore);
     }
 }

@@ -1,4 +1,6 @@
 let cpuHand;
+let playerScore = 0;
+let cpuScore = 0;
 
 // function getComputerChoice
 function getComputerChoice(min, max) {
@@ -16,7 +18,10 @@ function getComputerChoice(min, max) {
 
 // prompt for playerHand
 let playerHand = prompt("What will you play?");
-playerHand = playerHand.toLowerCase();
+if (playerHand === null)
+    playerHand = prompt("Please enter rock, paper, or scissors");
+else
+    playerHand = playerHand.toLowerCase();
 
 // function to play round
 function playRound(playerHand, cpuHand) {
@@ -24,22 +29,32 @@ function playRound(playerHand, cpuHand) {
     // conditions for winning hand
     if (playerHand === "rock" && cpuHand === "rock")
         return "Tie!";
-    else if (playerHand === "rock" && cpuHand === "paper")
+    else if (playerHand === "rock" && cpuHand === "paper") {
+        cpuScore++;
         return "Paper beats Rock! You lose!";
-    else if (playerHand === "rock" && cpuHand === "scissors")
+    } 
+    else if (playerHand === "rock" && cpuHand === "scissors") {
+        playerScore++;
         return "Rock beats Scissors! You win!";
-    
-    else if (playerHand === "paper" && cpuHand === "rock")
+    }
+    else if (playerHand === "paper" && cpuHand === "rock") {
+        playerScore++;
         return "Paper beats Rock! You win!";
+    }
     else if (playerHand === "paper" && cpuHand === "paper")
         return "Tie!";
-    else if (playerHand === "paper" && cpuHand === "scissors")
+    else if (playerHand === "paper" && cpuHand === "scissors") {
+        cpuScore++;
         return "Scissors beats Paper! You lose!";
-
-    else if (playerHand === "scissors" && cpuHand === "rock")
+    }
+    else if (playerHand === "scissors" && cpuHand === "rock") {
+        cpuScore++;
         return "Rock beats Scissors! You lose!";
-    else if (playerHand === "scissors" && cpuHand === "paper")
-        return "Scissors beats Paper! You lose!";
+    }
+    else if (playerHand === "scissors" && cpuHand === "paper") {
+        playerScore++;
+        return "Scissors beats Paper! You win!";
+    }
     else if (playerHand === "scissors" && cpuHand === "scissors")
         return "Tie!";
 
@@ -47,5 +62,11 @@ function playRound(playerHand, cpuHand) {
         return "Input not valid";
 }
 
+// game function
+function game() {
+    for (let i = 0; i < 5; i++) {
+
+    }
+}
 getComputerChoice(1, 3);
 console.log(playRound(playerHand, cpuHand));

@@ -72,6 +72,13 @@ function game() {
         playRound();
         console.log("Player: " + playerScore + "\t" + "CPU: " + cpuScore);
     }
+
+    if (playerScore > cpuScore)
+        console.log("You win the game!");
+    else if (playerScore < cpuScore)
+        console.log("You lost the game :(");
+    else
+        console.log("It's a tie!");
 }
 
 game();

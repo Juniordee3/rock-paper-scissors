@@ -73,6 +73,7 @@ function game() {
         console.log("Player: " + playerScore + "\t" + "CPU: " + cpuScore);
     }
 
+    // win or lose message
     if (playerScore > cpuScore)
         console.log("You win the game!");
     else if (playerScore < cpuScore)

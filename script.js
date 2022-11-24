@@ -29,7 +29,7 @@ function playRound() {
         playerHand = playerHand.toLowerCase();
 
     // get cpuHand
-    cpuHand = getComputerChoice(1, 3);
+    let cpuHand = getComputerChoice(1, 3);
 
     // conditions for winning hand
     if (playerHand === "rock" && cpuHand === "rock")
